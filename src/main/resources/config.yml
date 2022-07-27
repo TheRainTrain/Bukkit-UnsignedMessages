@@ -1,0 +1,7 @@
+chat-format: "" # Leave blank for unchanged, anything else will change the format of chat messages
+                # %s should be used as a template
+                # The first %s is the player's display name, while the second %s is the message itself.
+                # Example:
+                # chat-format: "%s >> %s"
+                # This would result in something like the following:
+                # IveGotBeef >> Hello, World!
