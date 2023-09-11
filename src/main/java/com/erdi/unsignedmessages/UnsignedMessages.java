@@ -17,7 +17,7 @@ import org.bukkit.plugin.java.annotation.plugin.Description;
 import org.bukkit.plugin.java.annotation.plugin.Plugin;
 import org.bukkit.plugin.java.annotation.plugin.author.Author;
 
-@Plugin(name = "UnsignedMessages", version = "1.0.0")
+@Plugin(name = "UnsignedMessages", version = "1.0.1")
 @Description("A lightweight plugin which disables chat reporting")
 @Author("Erdi__")
 @ApiVersion(ApiVersion.Target.v1_19)
@@ -68,7 +68,7 @@ public class UnsignedMessages extends JavaPlugin implements Listener, CommandExe
 	public void reload() {
 		reloadConfig();
 
-		format = getConfig().getString("chat-format");
+		format = ChatColor.translateAlternateColorCodes('&', getConfig().getString("chat-format"));
 		blankFormat = format.isEmpty();
 		
 		getLogger().info("Format: " + (blankFormat ? "blank" : "`" + format.replaceAll("`", "'") + "`"));
